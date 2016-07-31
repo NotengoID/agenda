@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">agenda</string>
+    <string name="nombre">Tomas Carrillo</string>
+    <string name="telefono">987987987</string>
+    <string name="email">sasas@gmail.com</string>
+    <string name="pnombre">nombre</string>
+    <string name="ptelefono">telefono</string>
+    <string name="pemail">email</string>
+    <string name="pfecha">fecha</string>
+    <string name="pdescripcion">descripcion</string>
+</resources>
