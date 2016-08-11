@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,7 +7,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="com.notengoid.agenda.DetalleContacto">
 
     <TextView
@@ -16,43 +15,100 @@
         android:layout_height="wrap_content"
         android:text="Confirmar Datos"
         android:textStyle="bold"
-        android:textSize="@dimen/nombre_contacto"/>
+        android:textSize="@dimen/nombre_contacto"
+        android:paddingBottom="@dimen/top" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nombre"
-        android:id="@+id/tvNombre" />
+        android:id="@+id/tvNombre"
+        android:layout_below="@id/tvConfirmar"
+        android:textSize="@dimen/telefono_contacto"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="fecha"
-        android:id="@+id/tvFecha" />
+        android:orientation="horizontal"
+        android:layout_below="@id/tvNombre"
+        android:id="@+id/llFecha">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha Nacimiento: "
+            android:id="@+id/tvLFecNac"
+            android:textSize="@dimen/telefono_contacto"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvFecha"
+            android:textSize="@dimen/telefono_contacto"/>
+    </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="telefono"
-        android:id="@+id/tvTelefono" />
+        android:orientation="horizontal"
+        android:id="@+id/llTelefono"
+        android:layout_below="@id/llFecha">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tel. "
+            android:id="@+id/tvLTelefono"
+            android:textSize="@dimen/telefono_contacto"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTelefono"
+            android:textSize="@dimen/telefono_contacto"/>
+    </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="email"
-        android:id="@+id/tvEmail" />
+        android:orientation="horizontal"
+        android:id="@+id/llEmail"
+        android:layout_below="@id/llTelefono">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: "
+            android:id="@+id/tvLEmail"
+            android:textSize="@dimen/telefono_contacto"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvEmail"
+            android:textSize="@dimen/telefono_contacto"/>
+    </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Descripcion"
-        android:id="@+id/tvDescripcion" />
+        android:orientation="horizontal"
+        android:id="@+id/llDescripcion"
+        android:layout_below="@id/llEmail">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripción: "
+            android:id="@+id/textView"
+            android:textSize="@dimen/telefono_contacto"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDescripcion"
+            android:textSize="@dimen/telefono_contacto"/>
+    </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Editar Datos"
         android:id="@+id/bEditar"
+        android:onClick="editar"
         android:layout_gravity="center_horizontal"
-        android:onClick="editar"/>
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

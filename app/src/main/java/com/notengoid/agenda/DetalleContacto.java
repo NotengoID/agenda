@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class DetalleContacto extends AppCompatActivity {
@@ -33,11 +32,11 @@ public class DetalleContacto extends AppCompatActivity {
         tvFecha = (TextView) findViewById(R.id.tvFecha);
         tvDescripcion = (TextView) findViewById(R.id.tvDescripcion);
 
-        tvNombre.setText(nombre);
-        tvTelefono.setText(telefono);
-        tvEmail.setText(email);
-        tvEmail.setText(fecha);
-        tvDescripcion.setText(descripcion);
+        tvNombre.setText("" + nombre);
+        tvTelefono.setText("" + telefono);
+        tvEmail.setText("" + email);
+        tvFecha.setText("" + fecha);
+        tvDescripcion.setText("" + descripcion);
     }
 
     @Override
@@ -52,11 +51,11 @@ public class DetalleContacto extends AppCompatActivity {
     public void editar(View v){
         Intent intent = new Intent(DetalleContacto.this,MainActivity.class);
 
-        intent.putExtra(getResources().getString(R.string.pnombre), tvNombre.getText().toString());
-        intent.putExtra(getResources().getString(R.string.pfecha), tvTelefono.getText().toString());
-        intent.putExtra(getResources().getString(R.string.ptelefono), tvEmail.getText().toString());
-        intent.putExtra(getResources().getString(R.string.pemail), tvFecha.getText().toString());
-        intent.putExtra(getResources().getString(R.string.pdescripcion), tvDescripcion.getText().toString());
+        intent.putExtra(getResources().getString(R.string.pnombre), "" + tvNombre.getText().toString());
+        intent.putExtra(getResources().getString(R.string.pfecha), "" + tvFecha.getText().toString());
+        intent.putExtra(getResources().getString(R.string.ptelefono), "" + tvTelefono.getText().toString());
+        intent.putExtra(getResources().getString(R.string.pemail), "" + tvEmail.getText().toString());
+        intent.putExtra(getResources().getString(R.string.pdescripcion), "" + tvDescripcion.getText().toString());
 
         startActivity(intent);
 

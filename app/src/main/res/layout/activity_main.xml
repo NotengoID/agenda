@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,51 +10,108 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.notengoid.agenda.MainActivity">
 
-    <EditText
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Nombre completo"
-        android:ems="10"
+        android:id="@+id/tilNombre">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Nombre completo"
+            android:ems="10"
         android:id="@+id/etNombre"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
+    <!--<android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
+        android:id="@+id/tilFecha"
+        android:layout_below="@id/tilNombre">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/etFecha"/>
+    </android.support.design.widget.TextInputLayout>-->
+
+    <DatePicker
         android:id="@+id/etFecha"
-        android:layout_below="@id/etNombre"
-        android:text="date" />
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_below="@id/tilNombre"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="-3dp" />
 
-    <EditText
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/btnOk"
+        android:layout_alignTop="@+id/btnCancel"
+        android:layout_toRightOf="@+id/siguiente"
+        android:layout_toEndOf="@+id/siguiente" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/btnCancel"
+        android:layout_below="@+id/etFecha"
+        android:layout_toLeftOf="@+id/siguiente"
+        android:layout_toStartOf="@+id/siguiente" />
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/etTelefono"
-        android:layout_below="@id/etFecha"
-        android:text="Teléfono" />
+        android:id="@+id/tilTelefono"
+        android:layout_below="@id/btnOk">
 
-    <EditText
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:id="@+id/etTelefono"
+            android:hint="Teléfono" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/etEmail"
-        android:text="Email"
-        android:layout_below="@+id/etTelefono" />
+        android:id="@+id/tilEmail"
+        android:layout_below="@id/tilTelefono">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/etEmail"
+            android:hint="Email"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/etDescripcion"
-        android:text="Descripción Contacto"
-        android:layout_below="@id/etEmail"/>
+        android:id="@+id/tilDescripcion"
+        android:layout_below="@id/tilEmail">
 
-    <TextView
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/etDescripcion"
+            android:hint="Descripción Contacto"
+            android:layout_below="@id/etEmail"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/siguiente"
@@ -61,5 +119,4 @@
         android:layout_centerHorizontal="true"
         android:text="Siguiente"
         android:onClick="siguiente"/>
-
 </RelativeLayout>
